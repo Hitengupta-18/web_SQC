@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQC – Super Quant Coders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --primary: #0a1f44;
+            --secondary: #1b3b6f;
+            --accent: #00d4ff;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: #050c1a;
+            color: #d1d1d1;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: radial-gradient(circle, #1b3b6f, #0a1f44);
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: clamp(32px, 8vw, 60px);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(0,212,255,0.6);
+        }
+
+        header p { opacity: 0.85; }
+
+        .header-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            filter: blur(150px);
+            opacity: 0.15;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10,31,68,0.9);
+            backdrop-filter: blur(12px);
+            padding: 14px;
+            text-align: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,212,255,0.2);
+        }
+
+        nav a {
+            color: white;
+            margin: 0 14px;
+            font-size: 13px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        h2 {
+            color: var(--accent);
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .subtitle { color: #8892b0; margin-bottom: 40px; }
+
+        .highlight {
+            background: rgba(0,212,255,0.05);
+            padding: 30px;
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+            font-size: 18px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -3px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--accent);
+        }
+
+        .timeline-item h3 {
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        /* MANIFESTO */
+        .manifesto {
+            text-align: center;
+            font-size: 22px;
+            line-height: 1.8;
+            background: linear-gradient(120deg, rgba(0,212,255,0.1), rgba(0,212,255,0.02));
+            padding: 60px 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,212,255,0.3);
+            box-shadow: 0 0 30px rgba(0,212,255,0.15);
+        }
+
+        .manifesto span {
+            display: block;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 26px;
+            margin: 10px 0;
+        }
+
+        footer {
+            background: #02060f;
+            text-align: center;
+            padding: 40px;
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.8s;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-glow"></div>
+    <h1>SQC – Super Quant Coders</h1>
+    <p>Engineering the Future Through Code & Robotics</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#journey">Journey</a>
+    <a href="#manifesto">Manifesto</a>
+    <a href="#achievement">Project</a>
+    <a href="#gallery">Gallery</a>
+</nav>
+
+<section id="about" class="reveal">
+    <h2>The Tech Hub</h2>
+    <div class="highlight">
+        SQC is the official technical club of the college, built on mentorship,
+        high-performance engineering, and real-world problem solving.
+    </div>
+</section>
+
+<section id="journey" class="reveal">
+    <h2>Tech Journey</h2>
+    <p class="subtitle">From beginners to system architects</p>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>Stage 1 – Foundations</h3>
+            <p>Programming basics, logical thinking, and engineering fundamentals.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Stage 2 – Domain Exploration</h3>
+            <p>Exposure to robotics, web, AI, embedded systems, and coding.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Stage 3 – Team Projects</h3>
+            <p>Collaborative mini-projects and guided implementation.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Stage 4 – Flagship Systems</h3>
+            <p>Complex systems like <strong>Chi Chi – The Robotic Dog</strong> and future autonomous platforms.</p>
+        </div>
+    </div>
+</section>
+
+<section id="manifesto" class="reveal">
+    <h2>SQC Manifesto</h2>
+
+    <div class="manifesto">
+        We don’t chase certificates.  
+        <span>We build systems.</span>
+
+        We don’t memorize solutions.  
+        <span>We engineer answers.</span>
+
+        We don’t fear complexity.  
+        <span>We master it.</span>
+    </div>
+</section>
+
+<section id="achievement" class="reveal">
+    <h2>Flagship Project</h2>
+    <div class="card">
+        <h3 style="color: var(--accent);">🤖 Chi Chi – The Robotic Dog</h3>
+        <p>
+            Chi Chi is a fully functional robotic dog developed by SQC members.
+            It can walk, respond to commands, speak, play music, and is remotely controlled,
+            showcasing excellence in embedded systems, robotics, and system integration.
+        </p>
+    </div>
+</section>
+
+<section id="gallery" class="reveal">
+    <h2>Innovation Gallery</h2>
+    <div class="grid">
+        <div class="card">Chi Chi – Mechanical Structure</div>
+        <div class="card">Electronics & Control Systems</div>
+        <div class="card">SQC Team Development</div>
+    </div>
+</section>
+
+<footer>
+    © 2026 SQC – Super Quant Coders | Official Technical Club of the College
+</footer>
+
+<script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
+
